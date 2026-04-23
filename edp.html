@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Engineering Design Process in Robotics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body>
+    <a class="page-home-button" href="index.html" aria-label="Back to homepage">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 11.2 12 4l9 7.2" />
+        <path d="M5.5 10.5V20h13v-9.5" />
+        <path d="M9.5 20v-6h5v6" />
+      </svg>
+    </a>
+
+    <div class="cursor-reticle" aria-hidden="true">
+      <svg viewBox="0 0 84 84">
+        <path class="reticle-shape" d="M25 11 L14 19 L14 31" />
+        <path class="reticle-shape" d="M59 11 L70 19 L70 31" />
+        <path class="reticle-shape" d="M25 73 L14 65 L14 53" />
+        <path class="reticle-shape" d="M59 73 L70 65 L70 53" />
+        <circle class="reticle-dot" cx="42" cy="42" r="3.5" />
+      </svg>
+    </div>
+    <div
+      class="particle-overlay"
+      id="particle-overlay"
+      aria-hidden="true"
+    ></div>
+    <main>
+      <section class="hero">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <span class="section-tag">Robotics Project</span>
+            <span class="hero-credit">Made by Anderson Wang</span>
+            <h1 class="hero-title">
+              The Engineering Design Process in Robotics
+            </h1>
+            <div class="hero-subtitle">
+              How engineers design, test, and improve robots
+            </div>
+            <p>
+              Engineers follow a step-by-step process to solve problems and
+              improve designs. The Engineering Design Process helps engineers
+              solve problems by testing ideas and improving solutions over time.
+              In robotics, that process helps teams create machines that can
+              sense, decide, and act in the real world with greater safety and
+              reliability.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#process"
+                >Explore the Process</a
+              >
+              <a class="button button-secondary" href="#example"
+                >See the Self-Driving Car Example</a
+              >
+            </div>
+          </div>
+
+          <div class="hero-panel reveal">
+            <div class="mini-dashboard">
+              <div class="dashboard-card">
+                <h3>Why the process matters</h3>
+                <p>
+                  Robots usually don't work perfectly the first time, so
+                  engineers need to test and improve them. Engineers use
+                  feedback, testing, and iteration to make each version smarter
+                  and safer.
+                </p>
+              </div>
+              <div class="dashboard-metrics">
+                <div class="metric">
+                  <strong>6</strong>
+                  <span>Core stages in the cycle</span>
+                </div>
+                <div class="metric">
+                  <strong>Loop</strong>
+                  <span>Designs improve through repetition</span>
+                </div>
+              </div>
+              <div class="dashboard-card">
+                <h3>Focus in robotics</h3>
+                <p>
+                  Each design choice has to balance performance, safety, cost,
+                  and the limits of sensors, software, and hardware.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <span class="section-tag reveal">Design Cycle</span>
+        <h2 class="section-heading reveal">Engineering Design Process</h2>
+        <p class="section-copy reveal">
+          The engineering design process is a circular loop, not a one-time
+          checklist. Engineers move forward, test their ideas, learn from
+          mistakes, and return to earlier steps to improve the robot.
+        </p>
+
+        <div class="process-layout">
+          <div class="cycle-shell reveal">
+            <svg class="loop-svg" viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M50,9 A41,41 0 1,1 49.9,9"></path>
+            </svg>
+
+            <div class="cycle-center">
+              <div class="cycle-center-content">
+                <div class="center-step-num" id="center-step-num">1</div>
+                <h3 class="center-step-title" id="center-step-title">
+                  Identify the Problem
+                </h3>
+                <p class="center-step-copy" id="center-step-copy">
+                  Engineers begin by clearly stating the task the robot must
+                  complete and what success will look like.
+                </p>
+              </div>
+            </div>
+
+            <article
+              class="cycle-step active"
+              data-step-orbit="1"
+              style="--angle: 0deg"
+            >
+              <div class="icon">1</div>
+            </article>
+
+            <article
+              class="cycle-step"
+              data-step-orbit="2"
+              style="--angle: 60deg"
+            >
+              <div class="icon">2</div>
+            </article>
+
+            <article
+              class="cycle-step"
+              data-step-orbit="3"
+              style="--angle: 120deg"
+            >
+              <div class="icon">3</div>
+            </article>
+
+            <article
+              class="cycle-step"
+              data-step-orbit="4"
+              style="--angle: 180deg"
+            >
+              <div class="icon">4</div>
+            </article>
+
+            <article
+              class="cycle-step"
+              data-step-orbit="5"
+              style="--angle: 240deg"
+            >
+              <div class="icon">5</div>
+            </article>
+
+            <article
+              class="cycle-step"
+              data-step-orbit="6"
+              style="--angle: 300deg"
+            >
+              <div class="icon">6</div>
+            </article>
+          </div>
+
+          <div class="step-list">
+            <button class="step-row reveal active" type="button" data-step="1">
+              <div class="step-number">1</div>
+              <div>
+                <h4>Identify the Problem</h4>
+              </div>
+            </button>
+            <button class="step-row reveal" type="button" data-step="2">
+              <div class="step-number">2</div>
+              <div>
+                <h4>Research the Problem</h4>
+              </div>
+            </button>
+            <button class="step-row reveal" type="button" data-step="3">
+              <div class="step-number">3</div>
+              <div>
+                <h4>Brainstorm Solutions</h4>
+              </div>
+            </button>
+            <button class="step-row reveal" type="button" data-step="4">
+              <div class="step-number">4</div>
+              <div>
+                <h4>Build a Prototype</h4>
+              </div>
+            </button>
+            <button class="step-row reveal" type="button" data-step="5">
+              <div class="step-number">5</div>
+              <div>
+                <h4>Test the Prototype</h4>
+              </div>
+            </button>
+            <button class="step-row reveal" type="button" data-step="6">
+              <div class="step-number">6</div>
+              <div>
+                <h4>Improve (Iterate)</h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="example">
+        <span class="section-tag reveal">Real-World Example</span>
+        <h2 class="section-heading reveal">Self-Driving Car</h2>
+        <p class="section-copy reveal">
+          A self-driving car is a robotics system that uses cameras, sensors,
+          maps, and AI to make decisions on the road. It is a strong example of
+          why engineering design must include testing, limits, and improvement
+          over time.
+        </p>
+
+        <div class="cards-grid">
+          <article class="card reveal">
+            <h3>Problem</h3>
+            <p>
+              Self-driving cars must safely transport people without human
+              drivers.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Constraints</h3>
+            <div class="chip-list">
+              <span class="chip">Cost</span>
+              <span class="chip">Safety regulations</span>
+              <span class="chip">Weather conditions</span>
+              <span class="chip">Sensor limitations</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Criteria</h3>
+            <p>
+              The car must be safe, accurate, and able to respond quickly to
+              road conditions.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>What might go wrong</h3>
+            <div class="chip-list">
+              <span class="chip">Sensors fail</span>
+              <span class="chip">Misreading traffic signs</span>
+              <span class="chip">Bad weather affecting visibility</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Engineering response</h3>
+            <p>
+              Engineers collect new data, run more tests, and redesign the
+              system so the car can make better decisions in changing road
+              conditions.
+            </p>
+          </article>
+        </div>
+
+        <div class="applied-process reveal">
+          <div class="applied-process-header">
+            <h3>Engineering Design Process Applied to a Self-Driving Car</h3>
+            <p>
+              This example becomes stronger when it is explained through the
+              full engineering design process. Engineers do not just describe
+              the car's features. They move through each step, test ideas, and
+              return to earlier stages when problems appear.
+            </p>
+          </div>
+
+          <div class="applied-grid">
+            <article class="applied-step reveal">
+              <div class="applied-step-top">
+                <span class="applied-step-number">1</span>
+                <h4>Identify the Problem</h4>
+              </div>
+              <p>
+                Engineers define the goal: create a self-driving car that can
+                transport people safely without a human driver.
+              </p>
+            </article>
+
+            <article class="applied-step reveal">
+              <div class="applied-step-top">
+                <span class="applied-step-number">2</span>
+                <h4>Research the Problem</h4>
+              </div>
+              <p>
+                They study traffic laws, road conditions, sensors, AI systems,
+                safety rules, and how weather can affect visibility and
+                performance.
+              </p>
+            </article>
+
+            <article class="applied-step reveal">
+              <div class="applied-step-top">
+                <span class="applied-step-number">3</span>
+                <h4>Brainstorm Solutions</h4>
+              </div>
+              <p>
+                Teams compare ideas for cameras, radar, lidar, mapping, and
+                software so the car can detect objects and make driving
+                decisions.
+              </p>
+            </article>
+
+            <article class="applied-step reveal">
+              <div class="applied-step-top">
+                <span class="applied-step-number">4</span>
+                <h4>Build a Prototype</h4>
+              </div>
+              <p>
+                Engineers build an early test vehicle, or prototype, with trial
+                sensors and software to see how the self-driving system works in
+                real driving situations.
+              </p>
+            </article>
+
+            <article class="applied-step reveal">
+              <div class="applied-step-top">
+                <span class="applied-step-number">5</span>
+                <h4>Test the Prototype</h4>
+              </div>
+              <p>
+                The prototype is tested on roads and in simulations to check
+                whether it can follow lanes, read signs, avoid hazards, and
+                react quickly.
+              </p>
+            </article>
+
+            <article class="applied-step reveal">
+              <div class="applied-step-top">
+                <span class="applied-step-number">6</span>
+                <h4>Improve (Iterate)</h4>
+              </div>
+              <p>
+                If the car misreads a stop sign or a sensor fails in bad
+                weather, engineers return to research, testing, and improvement
+                so the next version performs better.
+              </p>
+            </article>
+          </div>
+
+          <p class="applied-note reveal">
+            Failures do not end the project. They send engineers back into the
+            engineering design process, where they test again, improve the
+            prototype, and keep iterating until the design is safer and more
+            reliable.
+          </p>
+        </div>
+      </section>
+
+      <section id="failure">
+        <span class="section-tag reveal">Failure & Improvement</span>
+        <h2 class="section-heading reveal">From Mistake to Better Design</h2>
+        <p class="section-copy reveal">
+          Failure is a normal part of the engineering process. Instead of
+          stopping after a mistake, engineers treat it as evidence that helps
+          them improve the next version of the robot.
+        </p>
+
+        <div class="flow-wrapper">
+          <article class="flow-card failure reveal">
+            <h3>Failure</h3>
+            <p>"The car misidentifies a stop sign."</p>
+          </article>
+          <div class="flow-arrow reveal">&rarr;</div>
+          <article class="flow-card fix reveal">
+            <h3>Fix</h3>
+            <p>"Engineers improve AI models and upgrade sensors."</p>
+          </article>
+          <div class="flow-arrow reveal">&rarr;</div>
+          <article class="flow-card improved reveal">
+            <h3>Improved Design</h3>
+            <p>
+              The updated car can recognize signs more accurately in different
+              lighting and weather conditions.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="compare">
+        <span class="section-tag reveal">Decision Making</span>
+        <h2 class="section-heading reveal">Criteria vs Constraints</h2>
+        <p class="section-copy reveal">
+          Engineers judge a robotics design in two ways: what it should achieve,
+          and what limits it must work within. Both guide the final solution.
+        </p>
+
+        <div class="chart reveal">
+          <div class="chart-grid">
+            <div class="chart-column criteria">
+              <h3>Criteria</h3>
+              <ul>
+                <li>Safe</li>
+                <li>Accurate</li>
+                <li>Fast response</li>
+                <li>Reliable</li>
+              </ul>
+            </div>
+            <div class="chart-column constraints">
+              <h3>Constraints</h3>
+              <ul>
+                <li>Budget</li>
+                <li>Time</li>
+                <li>Technology limits</li>
+                <li>Laws</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="feedback">
+        <span class="section-tag reveal">Feedback Loop</span>
+        <h2 class="section-heading reveal">Iteration Makes Robotics Better</h2>
+        <p class="section-copy reveal">
+          Engineers repeat the process to improve designs over time. Every test,
+          failure, and fix adds information that feeds back into the design
+          cycle and leads to a stronger robotics solution.
+        </p>
+
+        <div class="feedback-panel reveal">
+          <div class="feedback-visual">
+            <div class="feedback-box">
+              <h3>Test Results</h3>
+              <p>
+                Road tests, simulations, and sensor checks reveal where the
+                robot performs well and where it still struggles.
+              </p>
+            </div>
+            <div class="feedback-loop" aria-hidden="true"></div>
+            <div class="feedback-box">
+              <h3>Back to the Cycle</h3>
+              <p>
+                That feedback sends engineers back to research, redesign, and
+                rebuild so the next version works better than the last.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vocabulary">
+        <span class="section-tag reveal">Key Vocabulary</span>
+        <h2 class="section-heading reveal">Glossary of Important Terms</h2>
+        <p class="section-copy reveal">
+          These definitions explain the most important engineering words used
+          throughout this robotics project.
+        </p>
+
+        <div class="vocab-grid">
+          <article class="vocab-card reveal">
+            <h3>Engineering Design Process (EDP)</h3>
+            <p>
+              A step-by-step process engineers use to solve problems, test
+              ideas, and improve designs.
+            </p>
+          </article>
+
+          <article class="vocab-card reveal">
+            <h3>Criteria</h3>
+            <p>
+              The goals or requirements a design must meet to be successful.
+            </p>
+          </article>
+
+          <article class="vocab-card reveal">
+            <h3>Constraints</h3>
+            <p>
+              The limits or restrictions on a design, such as time, budget, or
+              materials.
+            </p>
+          </article>
+
+          <article class="vocab-card reveal">
+            <h3>Prototype</h3>
+            <p>
+              A first model or sample of a design used for testing and
+              improvement.
+            </p>
+          </article>
+
+          <article class="vocab-card reveal">
+            <h3>Iteration</h3>
+            <p>Repeating the design process to make a product better.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="reveal">
+      &copy; 2026 AndxLab. Designed & Developed by Anderson Wang.
+    </footer>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
