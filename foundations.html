@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundations of Robotics Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="page-home-button" href="index.html" aria-label="Back to homepage">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 11.2 12 4l9 7.2" />
+        <path d="M5.5 10.5V20h13v-9.5" />
+        <path d="M9.5 20v-6h5v6" />
+      </svg>
+    </a>
+
+    <div class="cursor-reticle" aria-hidden="true">
+      <svg viewBox="0 0 84 84">
+        <path class="reticle-shape" d="M25 11 L14 19 L14 31" />
+        <path class="reticle-shape" d="M59 11 L70 19 L70 31" />
+        <path class="reticle-shape" d="M25 73 L14 65 L14 53" />
+        <path class="reticle-shape" d="M59 73 L70 65 L70 53" />
+        <circle class="reticle-dot" cx="42" cy="42" r="3.5" />
+      </svg>
+    </div>
+
+    <main>
+      <section class="hero foundations-hero">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <span class="section-tag">Robotics Foundations</span>
+            <span class="hero-credit">Robots as complete systems</span>
+            <h1 class="hero-title">Foundations of Robotics Systems</h1>
+            <div class="hero-subtitle">
+              How robot types, parts, tools, and power systems work together
+            </div>
+            <p>
+              A robot is more than one moving machine. It is a system made from
+              sensors, actuators, controllers, tools, power, and safety parts
+              working together to complete a task.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#types">Compare Robots</a>
+              <a class="button button-secondary" href="#diagram"
+                >See the System Diagram</a
+              >
+            </div>
+          </div>
+
+          <div class="hero-panel reveal">
+            <div class="mini-dashboard">
+              <div class="dashboard-card">
+                <h3>Big idea made simple</h3>
+                <p>
+                  Robots are made of parts working together, almost like the
+                  human body uses senses, muscles, and a brain.
+                </p>
+              </div>
+              <div class="dashboard-metrics">
+                <div class="metric">
+                  <strong>Sense</strong>
+                  <span>Sensors detect the environment</span>
+                </div>
+                <div class="metric">
+                  <strong>Act</strong>
+                  <span>Actuators create movement</span>
+                </div>
+              </div>
+              <div class="dashboard-card">
+                <h3>Key control idea</h3>
+                <p>
+                  A controller uses information from sensors to decide what the
+                  robot should do next.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="types">
+        <span class="section-tag reveal">Types of Robots</span>
+        <h2 class="section-heading reveal">Common Robot Designs</h2>
+        <p class="section-copy reveal">
+          Different robots are built for different jobs. Shape, movement, and
+          workspace all affect what a robot can do well.
+        </p>
+
+        <div class="cards-grid">
+          <article class="card robot-type-card reveal">
+            <button
+              class="robot-flip-card"
+              type="button"
+              aria-label="Cartesian gantry robot image card"
+            >
+              <span class="robot-flip-inner">
+                <span class="robot-flip-face robot-flip-front">
+                  <img
+                    class="robot-card-image"
+                    src="images/gantry-robot-image.jpg"
+                    alt="Cartesian gantry robot with straight rail movement"
+                  />
+                </span>
+                <span class="robot-flip-face robot-flip-back">
+                  <strong>Gantry Motion</strong>
+                  <span>
+                    Moves in straight X, Y, and Z paths for accurate work.
+                  </span>
+                  <span class="flip-cue">Hover or focus to flip</span>
+                </span>
+              </span>
+            </button>
+            <span class="tech-label">01</span>
+            <h3>Cartesian Robot (Gantry)</h3>
+            <p>
+              <strong>What it looks like:</strong> A box-like frame with a tool
+              that moves in straight lines along X, Y, and Z rails.
+            </p>
+            <p>
+              <strong>Used for:</strong> 3D printing, CNC machines,
+              pick-and-place work, and moving parts across a flat area.
+            </p>
+          </article>
+
+          <article class="card robot-type-card reveal">
+            <button
+              class="robot-flip-card"
+              type="button"
+              aria-label="Articulated robot arm image card"
+            >
+              <span class="robot-flip-inner">
+                <span class="robot-flip-face robot-flip-front">
+                  <img
+                    class="robot-card-image"
+                    src="images/articulated-robot-arm-image.jpg"
+                    alt="Articulated robot arm with rotating joints"
+                  />
+                </span>
+                <span class="robot-flip-face robot-flip-back">
+                  <strong>Flexible Arm</strong>
+                  <span>
+                    Rotating joints give the arm more directions to move.
+                  </span>
+                  <span class="flip-cue">Hover or focus to flip</span>
+                </span>
+              </span>
+            </button>
+            <span class="tech-label">02</span>
+            <h3>Articulated Robot Arm</h3>
+            <p>
+              <strong>What it looks like:</strong> A robot arm with several
+              rotating joints, similar to a shoulder, elbow, and wrist.
+            </p>
+            <p>
+              <strong>Used for:</strong> Welding, painting, assembly, machine
+              loading, and jobs that need flexible movement.
+            </p>
+            <div class="example-box">
+              <strong>DOF:</strong> Degree of Freedom means one way a robot can
+              move. A 6-DOF arm can move in six different ways, which helps it
+              reach many positions and angles.
+            </div>
+          </article>
+
+          <article class="card robot-type-card reveal">
+            <button
+              class="robot-flip-card"
+              type="button"
+              aria-label="SCARA robot image card"
+            >
+              <span class="robot-flip-inner">
+                <span class="robot-flip-face robot-flip-front">
+                  <img
+                    class="robot-card-image"
+                    src="images/scara-image.jpg"
+                    alt="SCARA robot arm used for fast assembly tasks"
+                  />
+                </span>
+                <span class="robot-flip-face robot-flip-back">
+                  <strong>Fast Assembly</strong>
+                  <span>
+                    Built for quick side-to-side movement with small parts.
+                  </span>
+                  <span class="flip-cue">Hover or focus to flip</span>
+                </span>
+              </span>
+            </button>
+            <span class="tech-label">03</span>
+            <h3>SCARA</h3>
+            <p>
+              <strong>What it looks like:</strong> A fast arm with two main
+              horizontal links and a tool that moves up and down.
+            </p>
+            <p>
+              <strong>Used for:</strong> Fast assembly, sorting, packaging, and
+              placing small parts on a production line.
+            </p>
+          </article>
+
+          <article class="card robot-type-card reveal">
+            <button
+              class="robot-flip-card"
+              type="button"
+              aria-label="Mobile robot image card"
+            >
+              <span class="robot-flip-inner">
+                <span class="robot-flip-face robot-flip-front">
+                  <img
+                    class="robot-card-image"
+                    src="images/mobile-robot-image.jpg"
+                    alt="Mobile robot platform used for transport"
+                  />
+                </span>
+                <span class="robot-flip-face robot-flip-back">
+                  <strong>Moves Materials</strong>
+                  <span>
+                    Drives through spaces to carry items between locations.
+                  </span>
+                  <span class="flip-cue">Hover or focus to flip</span>
+                </span>
+              </span>
+            </button>
+            <span class="tech-label">04</span>
+            <h3>Mobile Robot (AGV or AMR)</h3>
+            <p>
+              <strong>What it looks like:</strong> A wheeled platform that
+              drives through a room, warehouse, hospital, or factory.
+            </p>
+            <p>
+              <strong>Used for:</strong> Carrying materials, delivering items,
+              inspecting areas, and moving products between workstations.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="diagram">
+        <span class="section-tag reveal">Labeled Diagram</span>
+        <h2 class="section-heading reveal">Full Robotic System</h2>
+        <p class="section-copy reveal">
+          This diagram shows the main parts of a robotic system and how
+          information, power, and motion connect.
+        </p>
+
+        <button
+          class="system-diagram-panel system-diagram-flip reveal"
+          type="button"
+          aria-label="Full robotic system diagram flip card"
+        >
+          <span class="system-diagram-inner">
+            <span class="system-diagram-face system-diagram-summary">
+              <strong>Full System Map</strong>
+              <span>
+                See how the sensor, controller, actuators, end effector, fluid
+                power, and conveyor connect.
+              </span>
+              <span class="flip-cue">Hover or focus to flip</span>
+            </span>
+            <span class="system-diagram-face system-diagram-image">
+              <img
+                class="robot-system-diagram"
+                src="images/full-robotic-system.image.jpg"
+                alt="Labeled robotic system diagram showing a controller PLC, sensor, actuator joints, fluid power supply, end effector, and conveyor system"
+              />
+            </span>
+          </span>
+        </button>
+      </section>
+
+      <section id="system-flow">
+        <span class="section-tag reveal">System Flow</span>
+        <h2 class="section-heading reveal">How the System Works</h2>
+        <p class="section-copy reveal">
+          A robotic system follows a flow of information, decisions, power, and
+          movement. This is how the parts work together during a task.
+        </p>
+
+        <div class="job-flow system-flow reveal" aria-label="Robotic system flow">
+          <div class="flow-node">Sensors send information</div>
+          <div class="flow-connector">&rarr;</div>
+          <div class="flow-node">Controller makes decisions</div>
+          <div class="flow-connector">&rarr;</div>
+          <div class="flow-node">Actuators create movement</div>
+          <div class="flow-connector">&rarr;</div>
+          <div class="flow-node final">Fluid power adds force</div>
+        </div>
+
+        <div class="applied-process reveal">
+          <div class="applied-grid">
+            <article class="applied-step reveal">
+              <div class="applied-step-top">
+                <span class="applied-step-number">1</span>
+                <h4>Sensors Send Information</h4>
+              </div>
+              <p>
+                Sensors detect objects, distance, position, or pressure and send
+                that information to the controller.
+              </p>
+            </article>
+
+            <article class="applied-step reveal">
+              <div class="applied-step-top">
+                <span class="applied-step-number">2</span>
+                <h4>Controller Decides</h4>
+              </div>
+              <p>
+                The controller processes the data and decides what action the
+                robot should take next.
+              </p>
+            </article>
+
+            <article class="applied-step reveal">
+              <div class="applied-step-top">
+                <span class="applied-step-number">3</span>
+                <h4>Actuators Move</h4>
+              </div>
+              <p>
+                The controller sends commands to actuators, which create motion
+                in motors, joints, grippers, or slides.
+              </p>
+            </article>
+
+            <article class="applied-step reveal">
+              <div class="applied-step-top">
+                <span class="applied-step-number">4</span>
+                <h4>Fluid Power Supports Motion</h4>
+              </div>
+              <p>
+                Pneumatics or hydraulics can provide the energy needed for fast
+                movement, strong force, or repeated clamping.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="components">
+        <span class="section-tag reveal">Components</span>
+        <h2 class="section-heading reveal">The Main Parts of a Robot</h2>
+        <p class="section-copy reveal">
+          Sensors, actuators, and controllers work together so a robot can
+          understand a situation and respond with movement.
+        </p>
+
+        <div class="tech-compare-grid">
+          <article class="card tech-card reveal">
+            <span class="tech-label">01</span>
+            <h3>Sensors</h3>
+            <p>
+              Sensors detect the environment. They can notice objects, distance,
+              light, pressure, color, or position.
+            </p>
+            <div class="example-box">
+              <strong>Example:</strong> A proximity sensor detects when an
+              object is close to the robot.
+            </div>
+          </article>
+
+          <article class="card tech-card reveal">
+            <span class="tech-label">02</span>
+            <h3>Actuators</h3>
+            <p>
+              Actuators create movement. They turn electrical, air, or liquid
+              power into motion.
+            </p>
+            <div class="example-box">
+              <strong>Example:</strong> A motor spins a wheel, joint, belt, or
+              robotic arm section.
+            </div>
+          </article>
+
+          <article class="card tech-card reveal">
+            <span class="tech-label">03</span>
+            <h3>Controllers</h3>
+            <p>
+              Controllers make decisions. They read sensor input and send
+              commands to actuators.
+            </p>
+            <div class="example-box">
+              <strong>Example:</strong> A programmable logic controller, or PLC,
+              controls machines in many factories.
+            </div>
+          </article>
+        </div>
+
+        <p class="applied-note reveal">
+          Sensors, controllers, and actuators work together as a system: the
+          sensor detects information, the controller decides what to do, and the
+          actuator moves the robot.
+        </p>
+      </section>
+
+      <section id="peripherals">
+        <span class="section-tag reveal">Peripheral Hardware</span>
+        <h2 class="section-heading reveal">Tools Around the Robot</h2>
+        <p class="section-copy reveal">
+          Peripheral hardware means the extra systems that support the robot but
+          are not the robot itself. These systems help the robot grab, move,
+          sort, or deliver parts.
+        </p>
+
+        <div class="cards-grid">
+          <article class="card reveal">
+            <h3>End Effectors</h3>
+            <p>
+              An end effector is the tool at the end of a robot arm. It changes
+              based on the job.
+            </p>
+            <div class="chip-list">
+              <span class="chip">Grippers</span>
+              <span class="chip">Suction cups</span>
+              <span class="chip">Welding tools</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Conveyor Systems</h3>
+            <p>
+              Conveyors move parts to and from robots. They help factories keep
+              materials moving at a steady pace.
+            </p>
+            <div class="chip-list">
+              <span class="chip">Part delivery</span>
+              <span class="chip">Sorting</span>
+              <span class="chip">Assembly lines</span>
+            </div>
+          </article>
+        </div>
+
+        <p class="applied-note reveal">
+          These tools matter because a robot usually needs support equipment to
+          finish a real job. For example, a conveyor can bring parts to the
+          robot, and an end effector can pick them up.
+        </p>
+      </section>
+
+      <section id="fluid-power">
+        <span class="section-tag reveal">Fluid Power</span>
+        <h2 class="section-heading reveal">Fluid Power: Pneumatics vs Hydraulics</h2>
+        <p class="section-copy reveal">
+          Fluid power uses air or liquid pressure to create movement and force.
+          Robots and machines use fluid power when a task needs quick motion,
+          strong force, or simple repeated movement.
+        </p>
+
+        <div class="chart reveal">
+          <div class="chart-grid">
+            <div class="chart-column criteria">
+              <h3>Pneumatics (Air)</h3>
+              <ul>
+                <li>
+                  <strong>Where used:</strong> factories, packaging lines,
+                  robot grippers, suction cups, clamps, and small slides.
+                </li>
+                <li>
+                  <strong>Pros:</strong> fast, clean, simple, and usually lower
+                  cost.
+                </li>
+                <li>
+                  <strong>Cons:</strong> less precise and not as strong as
+                  hydraulics.
+                </li>
+              </ul>
+            </div>
+            <div class="chart-column constraints">
+              <h3>Hydraulics (Liquid)</h3>
+              <ul>
+                <li>
+                  <strong>Where used:</strong> heavy equipment, presses,
+                  lifting systems, construction machines, and strong robot
+                  tools.
+                </li>
+                <li>
+                  <strong>Pros:</strong> very powerful, steady, and good for
+                  heavy loads.
+                </li>
+                <li>
+                  <strong>Cons:</strong> can leak, needs more maintenance, and
+                  can be messy.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="comparison">
+        <span class="section-tag reveal">Comparison Chart</span>
+        <h2 class="section-heading reveal">Robot Types Compared</h2>
+        <p class="section-copy reveal">
+          This chart compares the four robot types in the same categories so it
+          is easier to see how each design is different.
+        </p>
+
+        <div class="comparison-table-wrap reveal">
+          <table class="robot-comparison-table">
+            <thead>
+              <tr>
+                <th>Robot Type</th>
+                <th>Where Used</th>
+                <th>What It Looks Like</th>
+                <th>Used For</th>
+                <th>Pros</th>
+                <th>Cons</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Cartesian (Gantry)</th>
+                <td>Factories, labs, CNC machines, and 3D printers</td>
+                <td>Rectangular frame with straight rails</td>
+                <td>3D printing, CNC, pick-and-place</td>
+                <td>Accurate straight-line movement</td>
+                <td>Needs a large frame and is less flexible</td>
+              </tr>
+              <tr>
+                <th>Articulated Arm</th>
+                <td>Factories, welding cells, painting booths, and assembly lines</td>
+                <td>Arm with rotating joints</td>
+                <td>Welding, painting, assembly</td>
+                <td>Flexible reach and many angles</td>
+                <td>More complex to program and control</td>
+              </tr>
+              <tr>
+                <th>SCARA</th>
+                <td>Electronics factories, packaging lines, and assembly stations</td>
+                <td>Horizontal arm with vertical tool motion</td>
+                <td>Small part assembly and packaging</td>
+                <td>Very fast for repeatable tasks</td>
+                <td>Works best in a smaller, flat workspace</td>
+              </tr>
+              <tr>
+                <th>Mobile Robot (AGV or AMR)</th>
+                <td>Warehouses, hospitals, schools, and large factories</td>
+                <td>Wheeled platform</td>
+                <td>Delivery, transport, inspection</td>
+                <td>Moves work between locations</td>
+                <td>Needs clear paths, charging, and navigation sensors</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="takeaway">
+        <span class="section-tag reveal">Final Takeaway</span>
+        <h2 class="section-heading reveal">Robots Work as Systems</h2>
+        <div class="takeaway-panel reveal">
+          <p>
+            Robots are systems made of parts working together. The robot type
+            gives the machine its basic shape and motion. Sensors detect the
+            environment, controllers make decisions, actuators create movement,
+            peripheral hardware helps complete the job, and fluid power can add
+            fast or strong force.
+          </p>
+        </div>
+      </section>
+
+      <section id="vocabulary">
+        <span class="section-tag reveal">Key Vocabulary</span>
+        <h2 class="section-heading reveal">Glossary of Important Terms</h2>
+        <p class="section-copy reveal">
+          These definitions explain the most important engineering words used
+          throughout this robotics project.
+        </p>
+
+        <div class="vocab-grid">
+          <article class="vocab-card reveal">
+            <h3>Degree of Freedom (DOF)</h3>
+            <p>
+              The number of ways a robot can move. A robot with more DOF can
+              move in more directions.
+            </p>
+          </article>
+
+          <article class="vocab-card reveal">
+            <h3>Actuator</h3>
+            <p>A part that creates movement in a robot, such as a motor.</p>
+          </article>
+
+          <article class="vocab-card reveal">
+            <h3>Sensor</h3>
+            <p>
+              A device that detects information from the environment, such as a
+              proximity sensor.
+            </p>
+          </article>
+
+          <article class="vocab-card reveal">
+            <h3>Controller</h3>
+            <p>
+              The brain of the robot that makes decisions and controls actions,
+              such as a PLC.
+            </p>
+          </article>
+
+          <article class="vocab-card reveal">
+            <h3>End Effector</h3>
+            <p>
+              The tool at the end of a robot arm, such as a gripper or suction
+              cup.
+            </p>
+          </article>
+
+          <article class="vocab-card reveal">
+            <h3>Pneumatics</h3>
+            <p>
+              A system that uses air pressure to create movement. Used for fast
+              and light motion.
+            </p>
+          </article>
+
+          <article class="vocab-card reveal">
+            <h3>Hydraulics</h3>
+            <p>
+              A system that uses liquid pressure to create movement. Used for
+              strong and heavy force.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="reveal">
+      &copy; 2026 AndxLab. Designed & Developed by Anderson Wang.
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

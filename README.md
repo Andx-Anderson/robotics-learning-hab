@@ -6,7 +6,7 @@ An interactive, multi-page platform designed to help students explore robotics t
 
 ## Overview
 
-Robotics Learning Hub is a front-end web project that introduces key concepts in robotics, including the Engineering Design Process, emerging technologies, and career opportunities in the field.
+Robotics Learning Hub is a front-end web project that introduces key concepts in robotics, including the Engineering Design Process, robotics system foundations, emerging technologies, and career opportunities in the field.
 
 The project was built to transform a single-topic page into a structured learning platform, making robotics more engaging, visual, and easier to understand.
 
@@ -20,11 +20,14 @@ The project was built to transform a single-topic page into a structured learnin
 - Careers & Technology in Robotics  
   Covers AI, Machine Learning, and automation, along with real career paths
 
+- Foundations of Robotics Systems  
+  Explains robot types, components, peripheral hardware, fluid power, system flow, and key vocabulary
+
 - Project Sources  
   Organized references from real-world organizations and industry resources
 
 - Interactive UI  
-  Smooth animations, dynamic content, and custom cursor effects
+  Smooth animations, flip cards, dynamic content, and custom cursor effects
 
 ---
 
@@ -41,9 +44,11 @@ The project was built to transform a single-topic page into a structured learnin
 index.html # Main landing page
 edp.html # Engineering Design Process page
 careers.html # Careers & technology page
+foundations.html # Foundations of Robotics Systems page
 sources.html # References and citations
 style.css # Styling
 script.js # Interactivity
+images/ # Robotics images used by the foundations page
 
 ---
 
@@ -64,6 +69,7 @@ This project was created to:
 - Include interactive simulations
 - Improve mobile optimization
 - Expand career data
+- Add more labeled diagrams and hands-on activities
 
 ---
 
